@@ -18,8 +18,8 @@ class MinimalSprite(arcade.Sprite):
 
 
     def move(self, direction:MoveEnum):
-        #as a class exercise, lets fix this so it doesn't go off the window
-        if direction == MoveEnum.UP:
+        #  as a class exercise, lets fix this so it doesn't go off the window
+        if direction == MoveEnum.UP and not self.center_y+self.height/2 > self.game.height:
             self.center_y += self.speed
         elif direction == MoveEnum.DOWN:
             self.center_y -= self.speed
